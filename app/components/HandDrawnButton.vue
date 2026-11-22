@@ -1,5 +1,5 @@
 <template>
-    <button class="btn-hand-drawn" :class="{ 'is-loading': loading }" @click="$emit('click')">
+    <button class="btn-hand-drawn" :class="{ 'is-loading': loading, 'is-disabled': !enabled }" @click="$emit('click')">
       <div v-show="loading" class="loading-wrapper">
         <LoadingAnimation/>
       </div>
@@ -70,6 +70,21 @@ export default {
   .btn-hand-drawn.is-loading::before { animation-delay: -0.15s; }
   .btn-hand-drawn:is(:hover, :focus-visible)::after,
   .btn-hand-drawn.is-loading::after { clip-path: inset(0 0 0 0); }
+  .btn-hand-drawn.is-disabled {
+    filter: saturate(0);
+    cursor: default;
+  }
+  .btn-hand-drawn.is-disabled:is(:hover, :focus-visible),
+  .btn-hand-drawn.is-disabled:is(:hover, :focus-visible)::before,
+  .btn-hand-drawn.is-disabled.is-loading,
+  .btn-hand-drawn.is-disabled.is-loading::before {
+    animation: none;
+  }
+  .btn-hand-drawn.is-disabled:is(:hover, :focus-visible)::after,
+  .btn-hand-drawn.is-disabled.is-loading::after {
+    clip-path: inset(0 100% 0 0);
+  }
+
   @keyframes btn-hand-drawn-boil {
     0%   { border-radius: 16em 1.8em 14em 1.8em / 1.8em 14em 1.8em 16em; }
     33%  { border-radius: 1.8em 15em 1.6em 16em / 15em 1.6em 16em 1.8em; }

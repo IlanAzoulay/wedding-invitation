@@ -1,5 +1,5 @@
 <template>
-    <div :class="hasError? 'error' : '' ">{{labelText}} {{ hasError? "*" : "" }}</div>
+    <div :class="hasError? 'error' : '' ">{{labelText}}{{ hasError? "*" : "" }}</div>
 </template>
 
 <script>

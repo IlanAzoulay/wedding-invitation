@@ -6,12 +6,16 @@
         />
 
         <div class="torn-paper-container">
-            <!-- The background div receives the torn effect so the text isn't distorted -->
+
+            <!-- Tape -->
+            <div class="tape tape-top-left"></div>
+            <div class="tape tape-top-right"></div>
+
             <div class="torn-paper-background"></div>
                 <textarea v-model="userText" placeholder="Start typing on this torn piece of paper..."></textarea>
             </div>
 
-            <!-- Invisible SVG Filter defining the torn edge -->
+            <!-- Torn paper effect on the edges -->
             <svg width="0" height="0" class="svg-filter">
                 <filter id="torn-edge">
                     <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" result="noise" />
@@ -19,6 +23,7 @@
                 </filter>
             </svg>
         </div>
+
 </template>
 
 <script>
@@ -88,5 +93,34 @@ textarea {
 .svg-filter {
   position: absolute;
   pointer-events: none;
+}
+
+.tape {
+  position: absolute;
+  width: 50px;
+  height: 20px;
+  /* Semi-transparent white to mimic frosted tape */
+  background-color: rgba(255, 255, 255, 0.2);
+  /* Adds a slight frosted glass effect (works in modern browsers) */
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  /* A subtle shadow to lift the tape off the page */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  /* Ensures the tape sits on top of the paper and text */
+  z-index: 10;
+}
+
+/* Position and rotate the top-left tape */
+.tape-top-left {
+  top: 0px;
+  left: -20px;
+  transform: rotate(-45deg);
+}
+
+/* Position and rotate the top-right tape */
+.tape-top-right {
+  top: -5px;
+  right: -20px;
+  transform: rotate(45deg);
 }
 </style>

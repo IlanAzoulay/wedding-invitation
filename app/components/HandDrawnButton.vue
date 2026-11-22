@@ -2,7 +2,7 @@
     <button
       class="btn-hand-drawn"
       :class="{ 'is-loading': loading,
-      'is-disabled': !enabled }"
+      'is-disabled': disabled }"
       @click="$emit('click')"
       :disabled="disabled">
       <div v-show="loading" class="loading-wrapper">

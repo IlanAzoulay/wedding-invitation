@@ -57,7 +57,7 @@ export default {
     },
     methods: {
         getButtonText() {
-            if (this.sent && this.success) { return "Submitted!"; }
+            if (this.sent && this.success) { return "Thank you!"; }
             if (this.sending) { return "Submitting..."; }
             return "Submit";
         },

@@ -1,10 +1,12 @@
 <template>
   <div class="page">
+    <Timeline/>
     <GuestForm/>
   </div>
 </template>
 
 <script>
+import Timeline from "./components/Timeline.vue";
 import GuestForm from "./components/GuestForm.vue";
 </script>
 
@@ -15,10 +17,13 @@ html, body {
 }
 
 .page {
+    padding-top: 1rem;
+
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
 
     background-image: url('@/assets/PaperTex.png');
     background-size: cover;

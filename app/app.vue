@@ -15,10 +15,14 @@ html, body {
 }
 
 .page {
-  min-height: 100vh;
-  background-image: url('@/assets/PaperTex.png');
-  background-size: cover;
-  background-repeat: repeat;
-  background-attachment: scroll;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-image: url('@/assets/PaperTex.png');
+    background-size: cover;
+    background-repeat: repeat;
+    background-attachment: scroll;
 }
 </style>

@@ -2,15 +2,14 @@
     <div>
         <FormLabel
             :label-text="labelText"
-            :has-error="hasError"
-        />
+            :has-error="hasError"/>
 
         <div class="torn-paper-container">
-
             <!-- Tape -->
             <div class="tape tape-top-left"></div>
             <div class="tape tape-top-right"></div>
 
+            <!-- Main writing area -->
             <div class="torn-paper-background"></div>
                 <textarea v-model="userText" placeholder="Start typing on this torn piece of paper..."></textarea>
             </div>
@@ -23,7 +22,6 @@
                 </filter>
             </svg>
         </div>
-
 </template>
 
 <script>
@@ -59,7 +57,6 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  /* Keep only the solid base color here so only the shape is distorted */
   background-color: #faf8ef;
   filter: url(#torn-edge);
   z-index: -1;
@@ -75,9 +72,8 @@ textarea {
     font-size: 1.1rem;
     line-height: 28px;
     color: #333;
-    padding: 0; /* Removing internal padding helps text align with the lines perfectly */
+    padding: 0;
 
-    /* Move the notebook lines to the textarea */
     background-color: transparent;
     background-image:
         /* Red vertical line */
@@ -99,25 +95,19 @@ textarea {
   position: absolute;
   width: 50px;
   height: 20px;
-  /* Semi-transparent white to mimic frosted tape */
   background-color: rgba(255, 255, 255, 0.2);
-  /* Adds a slight frosted glass effect (works in modern browsers) */
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
-  /* A subtle shadow to lift the tape off the page */
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  /* Ensures the tape sits on top of the paper and text */
   z-index: 10;
 }
 
-/* Position and rotate the top-left tape */
 .tape-top-left {
   top: 0px;
   left: -20px;
   transform: rotate(-45deg);
 }
 
-/* Position and rotate the top-right tape */
 .tape-top-right {
   top: -5px;
   right: -20px;

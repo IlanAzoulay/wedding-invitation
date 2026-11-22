@@ -4,16 +4,23 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "cross-env NODE_NO_WARNINGS=1 nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@tailwindcss/vite": "^4.3.5",
+    "h3": "^2.0.8",
+    "nitropack": "^2.13.6",
     "nuxt": "^4.6.4",
+    "ofetch": "^1.5.1",
     "tailwindcss": "^4.3.5",
     "vue": "^3.5.45",
     "vue-router": "^5.4.0"
+  },
+  "devDependencies": {
+    "cross-env": "^10.1.0"
   }
 }

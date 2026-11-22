@@ -19,6 +19,8 @@
 </template>
 
 <script>
+import emailjs from '@emailjs/browser'
+
 class Answer {
   constructor(required) {
     this.response = undefined;
@@ -31,6 +33,10 @@ class Answer {
 }
 
 export default {
+    setup() {
+        const config = useRuntimeConfig()
+        return { config }
+    },
     data() {
       return {
         answers: [],
@@ -45,23 +51,37 @@ export default {
         ]
     },
     methods: {
-        onSubmit() {
+        async onSubmit() {
             let has_error = false
-            console.log("SUBMITTING")
             for (let _answer of this.answers) {
                 if (_answer.required && !_answer.response) {
                     _answer.setError(true)
                     has_error = true
-                }
-                else {
-                    console.log("> ", _answer.response)
+                } else {
                     _answer.setError(false)
                 }
             }
-            if (has_error) {return}
+            if (has_error) { return }
+
+            emailjs.send(
+                this.config.public.emailjsServiceId,
+                this.config.public.emailjsTemplateId,
+                {
+                    subject: "WEDDING",
+                    from_name: this.textAnswer.response,
+                    from_email: "Test email",
+                    message: "Radio answer: " + this.radioAnswer.response
+                },
+                this.config.public.emailjsPublicKey
+            ).then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+            })
+            .catch((error) => {
+                console.error('FAILED...', error);
+            });
         }
     }
-  }
+}
 </script>
 
 <style scoped>

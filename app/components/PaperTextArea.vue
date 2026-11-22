@@ -4,10 +4,21 @@
             :label-text="labelText"
             :has-error="hasError"
         />
-        <div class="torn-wrapper">
-            <textarea v-model="userText"></textarea>
+
+        <div class="torn-paper-container">
+            <!-- The background div receives the torn effect so the text isn't distorted -->
+            <div class="torn-paper-background"></div>
+                <textarea v-model="userText" placeholder="Start typing on this torn piece of paper..."></textarea>
+            </div>
+
+            <!-- Invisible SVG Filter defining the torn edge -->
+            <svg width="0" height="0" class="svg-filter">
+                <filter id="torn-edge">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" result="noise" />
+                    <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G" />
+                </filter>
+            </svg>
         </div>
-    </div>
 </template>
 
 <script>
@@ -29,67 +40,41 @@ export default {
 </script>
 
 <style scoped>
-.torn-wrapper {
-  display: inline-block;
-  background-color: #f5f0e8;
-  clip-path: polygon(
-    0%    3%,
-    2%    0%,
-    5%    2%,
-    8%    0%,
-    12%   3%,
-    16%   1%,
-    20%   3%,
-    25%   0%,
-    30%   2%,
-    35%   0%,
-    40%   3%,
-    45%   1%,
-    50%   3%,
-    55%   0%,
-    60%   2%,
-    65%   0%,
-    70%   3%,
-    75%   1%,
-    80%   3%,
-    85%   0%,
-    90%   2%,
-    95%   0%,
-    98%   2%,
-    100%  0%,
-    100%  97%,
-    98%   100%,
-    94%   98%,
-    90%   100%,
-    85%   97%,
-    80%   100%,
-    75%   98%,
-    70%   100%,
-    64%   97%,
-    58%   100%,
-    52%   98%,
-    46%   100%,
-    40%   97%,
-    34%   100%,
-    28%   98%,
-    22%   100%,
-    16%   97%,
-    10%   100%,
-    5%    98%,
-    0%    100%
-  );
+.torn-paper-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  filter: drop-shadow(3px 4px 6px rgba(0, 0, 0, 0.05));
+}
+
+.torn-paper-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #faf8ef; /* Off-white paper color */
+  /* Apply the SVG turbulence filter to warp the straight edges */
+  filter: url(#torn-edge);
+  z-index: -1;
 }
 
 textarea {
-  display: block;
+  width: 100%;
+  height: 250px;
   background: transparent;
   border: none;
   outline: none;
-  resize: none;
-  padding: 1.2rem 1.4rem;
-  font-size: 1rem;
-  width: 320px;
-  min-height: 120px;
-  box-sizing: border-box;
+  resize: vertical;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.svg-filter {
+  position: absolute;
+  pointer-events: none;
 }
 </style>

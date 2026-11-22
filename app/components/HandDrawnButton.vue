@@ -1,5 +1,10 @@
 <template>
-    <button class="btn-hand-drawn" :class="{ 'is-loading': loading, 'is-disabled': !enabled }" @click="$emit('click')">
+    <button
+      class="btn-hand-drawn"
+      :class="{ 'is-loading': loading,
+      'is-disabled': !enabled }"
+      @click="$emit('click')"
+      :disabled="disabled">
       <div v-show="loading" class="loading-wrapper">
         <LoadingAnimation/>
       </div>
@@ -12,7 +17,7 @@ export default {
     props: {
         buttonText: {type: String, required: true},
         loading: {type: Boolean, default: false},
-        enabled: {type: Boolean, default: true}
+        disabled: {type: Boolean, default: false}
     },
     emits: ['click'],
 }

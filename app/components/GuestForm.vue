@@ -14,7 +14,7 @@
         <HandDrawnButton
             :button-text="getButtonText()"
             :loading="sending"
-            :enabled="!(sent && success)"
+            :disabled="sent && success"
             @click="onSubmit"
         />
     </div>

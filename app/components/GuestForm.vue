@@ -12,7 +12,9 @@
             v-model="radioAnswer.response"
         />
         <HandDrawnButton
-            button-text="Submit"
+            :button-text="getButtonText()"
+            :loading="sending"
+            :enabled="sent && success"
             @click="onSubmit"
         />
     </div>
@@ -42,6 +44,9 @@ export default {
         answers: [],
         textAnswer: new Answer(true),
         radioAnswer: new Answer(true),
+        sending: false,
+        sent: false,
+        success: undefined
       }
     },
     beforeMount() {
@@ -51,6 +56,11 @@ export default {
         ]
     },
     methods: {
+        getButtonText() {
+            if (this.sent && this.success) { return "Submitted!"; }
+            if (this.sending) { return "Submitting..."; }
+            return "Submit";
+        },
         async onSubmit() {
             let has_error = false
             for (let _answer of this.answers) {
@@ -63,6 +73,7 @@ export default {
             }
             if (has_error) { return }
 
+            this.sending = true;
             emailjs.send(
                 this.config.public.emailjsServiceId,
                 this.config.public.emailjsTemplateId,
@@ -75,9 +86,15 @@ export default {
                 this.config.public.emailjsPublicKey
             ).then((response) => {
                 console.log('SUCCESS!', response.status, response.text);
+                this.sending = false;
+                this.sent = true;
+                this.success = true;
             })
             .catch((error) => {
                 console.error('FAILED...', error);
+                this.sending = false;
+                this.sent = true;
+                this.success = false;
             });
         }
     }

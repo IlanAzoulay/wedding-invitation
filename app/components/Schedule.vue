@@ -1,32 +1,39 @@
 <template>
     <div class="schedule-container">
-        <h1>July 8th</h1>
-        <h2>Welcome to Porto!</h2>
-        <span>blabla</span>
 
+        <div id="july8">
+            <h1>July 8th</h1>
+            <h2>Welcome to Porto!</h2>
+            <span>blabla</span>
+        </div>
         <img class="between-days" src="../assets/Flower_pattern_1b.png">
 
-        <h1>July 9th</h1>
-        <h2>Subtitle</h2>
-        <span>blabla</span>
-
+        <div id="july9">
+            <h1>July 9th</h1>
+            <h2>Arrival in Lugar da Pedra Alta</h2>
+            <span>blabla</span>
+        </div>
         <img class="between-days" src="../assets/Flower_pattern_1b.png">
 
-        <h1>July 10th</h1>
-        <h2>The Ceremony</h2>
-        <span>blabla</span>
-
+        <div id="july10">
+            <h1>July 10th</h1>
+            <h2>The Ceremony</h2>
+            <span>blabla</span>
+        </div>
         <img class="between-days" src="../assets/Flower_pattern_1b.png">
 
-        <h1>July 11th</h1>
-        <h2>The day after</h2>
-        <span>blabla</span>
-
+        <div id="july11">
+            <h1>July 11th</h1>
+            <h2>The day after</h2>
+            <span>blabla</span>
+        </div>
         <img class="between-days" src="../assets/Flower_pattern_1b.png">
 
-        <h1>July 11th</h1>
-        <h2>Chill day in Porto</h2>
-        <span>blabla</span>
+        <div id="july12">
+            <h1>July 12th</h1>
+            <h2>Chill day in Porto</h2>
+            <span>blabla</span>
+        </div>
     </div>
 </template>
 

@@ -5,7 +5,6 @@
             <img class="step-img" :src="imgSrc" :style="`width: ${imgSizePx}px`">
         </div>
 
-        <img src="../assets/Handdrawn_Arrow.png" class="multiply" style="width: 40px">
         <div class="rectangle-handdrawn">
             <h1 style="white-space: nowrap;">{{ dateText }}</h1>
             Texte à l'intérieur du rectangle

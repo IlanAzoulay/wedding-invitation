@@ -54,10 +54,13 @@
     margin: 0 1rem;
 }
 .timeline-line {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
     width: 2px;
-    height: 100%;
     left: calc(var(--size-timeline-star) / 2);
+
+    top: calc(var(--size-timeline-star) / 2);
+    bottom: calc(var(--size-timeline-star) / 2);
+    height: auto;
 }
 </style>

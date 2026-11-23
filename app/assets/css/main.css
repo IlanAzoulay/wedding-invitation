@@ -8,6 +8,6 @@ button {
   --notebook-blue: rgba(0, 97, 146, 0.25);
   --notebook-red: rgba(155, 0, 0, 0.25);
 
-  --size-timeline-star: 50px;
-  --size-timeline-circle: 30px;
+  --size-timeline-star: 35px;
+  --size-timeline-circle: 20px;
 }

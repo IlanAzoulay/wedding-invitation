@@ -29,5 +29,6 @@ html, body {
     background-size: cover;
     background-repeat: repeat;
     background-attachment: scroll;
+    background-position: center;
 }
 </style>

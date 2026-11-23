@@ -17,7 +17,10 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
     optimizeDeps: {
-      include: ['@emailjs/browser'],
+      include: [
+        '@emailjs/browser',
+        '@vue/devtools-core'
+      ],
     },
   },
 })

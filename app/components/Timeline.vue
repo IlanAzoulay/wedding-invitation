@@ -1,6 +1,7 @@
 <template>
+    <h1>SUMMARY</h1>
     <div class="timeline-container">
-        <div class="timeline-line" :style="`left: ${circleSize / 2}px`"></div>
+        <div class="timeline-line"></div>
         <TimelineStep
             :imgSrc=circleImg
             :imgSizePx=circleSize
@@ -49,14 +50,14 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    width: 100%;
     position: relative;
-    margin: 2rem;
+    margin: 0 1rem;
 }
 .timeline-line {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
     width: 2px;
     height: 100%;
+    left: calc(var(--size-timeline-star) / 2);
 }
 </style>

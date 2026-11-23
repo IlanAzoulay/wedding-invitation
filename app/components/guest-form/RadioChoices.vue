@@ -1,6 +1,6 @@
 <template>
     <div class="radio-list">
-        <FormLabel
+        <form-label
             :label-text="labelText"
             :has-error="hasError"
         />
@@ -12,7 +12,11 @@
 </template>
 
 <script>
+import FormLabel from './FormLabel.vue';
 export default {
+    components: {
+        FormLabel
+    },
     data() {
       return {
         picked: ''

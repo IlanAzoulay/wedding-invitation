@@ -1,13 +1,20 @@
 <template>
   <div class="page">
-    <Timeline/>
-    <GuestForm/>
+    <welcome-page/>
+    <img class="transition-flowers" src="./assets/Flower_pattern_2.png">
+
+    <timeline/>
+    <img class="transition-flowers" src="./assets/Flower_pattern_2.png">
+
+    <schedule/>
+    <img class="transition-flowers" src="./assets/Flower_pattern_2.png">
+
+    <guest-form/>
+    <img class="transition-flowers" src="./assets/Flower_pattern_2.png">
   </div>
 </template>
 
 <script>
-import Timeline from "./components/Timeline.vue";
-import GuestForm from "./components/GuestForm.vue";
 </script>
 
 <style>
@@ -17,18 +24,22 @@ html, body {
 }
 
 .page {
-    padding-top: 1rem;
+  padding-top: 1rem;
 
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 
-    background-image: url('@/assets/PaperTex.png');
-    background-size: cover;
-    background-repeat: repeat;
-    background-attachment: scroll;
-    background-position: center;
+  background-image: url('@/assets/PaperTex.png');
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-position: center;
+}
+
+.transition-flowers {
+  mix-blend-mode: multiply;
 }
 </style>

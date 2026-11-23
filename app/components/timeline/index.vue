@@ -1,5 +1,10 @@
 <template>
-    <h1>SUMMARY</h1>
+
+    <h1>
+        <img class="header-img" src="../../assets/Icon_Calendar.png">
+        SUMMARY
+    </h1>
+
     <div class="timeline-grid">
 
         <img class="icon-img" :src=iconPorto>
@@ -41,24 +46,23 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                circleImg: "_nuxt/assets/Handdrawn_Circle_Filled.png",
-                circleSize: 30,
-                starImg: "_nuxt/assets/Handdrawn_Star.png",
-                starSize: 50,
-                iconPorto: "_nuxt/assets/Icon_Porto.png",
-                iconBus: "_nuxt/assets/Icon_Bus.png",
-                iconRings: "_nuxt/assets/Icon_Rings.png",
-                iconQuinta: "_nuxt/assets/Icon_Quinta.png",
-            }
+export default {
+    data() {
+        return {
+            circleImg: "_nuxt/assets/Handdrawn_Circle_Filled.png",
+            circleSize: 30,
+            starImg: "_nuxt/assets/Handdrawn_Star.png",
+            starSize: 50,
+            iconPorto: "_nuxt/assets/Icon_Porto.png",
+            iconBus: "_nuxt/assets/Icon_Bus.png",
+            iconRings: "_nuxt/assets/Icon_Rings.png",
+            iconQuinta: "_nuxt/assets/Icon_Quinta.png",
         }
     }
+}
 </script>
 
 <style scoped>
-
 .timeline-grid {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -97,5 +101,17 @@
     --size-timeline-icon: 80px;
     width: var(--size-timeline-icon);
     mix-blend-mode: multiply;
+}
+h1 {
+    font-weight: bold;
+    font-size: x-large;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+.header-img {
+    mix-blend-mode: multiply;
+    width: var(--size-timeline-star);
 }
 </style>

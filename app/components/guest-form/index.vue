@@ -1,17 +1,17 @@
 <template>
     <div class="form-container">
-        <PaperTextArea
+        <paper-text-area
             labelText="Your name"
             :has-error="textAnswer.error"
             v-model="textAnswer.response"
         />
-        <RadioChoices
+        <radio-choices
             labelText="Question?"
             :radio-options="['Yes', 'No']"
             :has-error="radioAnswer.error"
             v-model="radioAnswer.response"
         />
-        <HandDrawnButton
+        <hand-drawn-button
             :button-text="getButtonText()"
             :loading="sending"
             :disabled="sent && success"
@@ -22,6 +22,9 @@
 
 <script>
 import emailjs from '@emailjs/browser'
+import HandDrawnButton from './HandDrawnButton.vue';
+import PaperTextArea from './PaperTextArea.vue';
+import RadioChoices from './RadioChoices.vue';
 
 class Answer {
   constructor(required) {
@@ -35,6 +38,11 @@ class Answer {
 }
 
 export default {
+    components: {
+        HandDrawnButton,
+        PaperTextArea,
+        RadioChoices,
+    },
     setup() {
         const config = useRuntimeConfig()
         return { config }

@@ -63,6 +63,8 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 2rem;
+    padding-top: 1rem;
 }
 .photo-container {
     display: flex;
@@ -73,5 +75,6 @@ h1 {
     font-family: var(--script-font);
     text-align: center;
     font-size: 5rem;
+    opacity: 70%;
 }
 </style>

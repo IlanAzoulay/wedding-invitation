@@ -32,7 +32,7 @@ export default {
 .frame-white {
     display: block;
     position: relative;
-    box-shadow: 2px 2px 10px #00000073;
+    box-shadow: 2px 2px 6px #00000073;
     background-color: #f2f2f2;
 }
 img {

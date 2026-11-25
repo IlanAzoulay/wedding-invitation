@@ -8,39 +8,40 @@
     <div class="timeline-grid">
 
         <img class="icon-img" :src=iconPorto>
-        <div class="rectangle-handdrawn" v-on:click="scrollTo('july8')">
+        <span class="rectangle-handdrawn" v-on:click="scrollTo('july8')">
             <img class="step-img step-circle" :src=circleImg>
-            <h2>8 July</h2>
+            <h3>8 July</h3>
             Welcome party in Porto
-        </div>
+        </span>
 
-        <img class="icon-img" :src=iconBus style="opacity: 65%;">
-        <div class="rectangle-handdrawn" v-on:click="scrollTo('july9')">
+        <img class="icon-img" :src=iconBus>
+        <span class="rectangle-handdrawn" v-on:click="scrollTo('july9')">
             <img class="step-img step-circle" :src=circleImg>
-            <h2>9 July</h2>
+            <h3>9 July</h3>
             Road to the Quinta
-        </div>
+        </span>
 
         <img class="icon-img" :src=iconRings>
-        <div class="rectangle-handdrawn" style="box-shadow: 0px 0px 6px #ffcf00a8;" v-on:click="scrollTo('july10')">
+        <span class="rectangle-handdrawn main-rectangle" v-on:click="scrollTo('july10')">
             <img class="step-img step-star" :src=starImg>
-            <h2>10 July</h2>
+            <h3>10 July</h3>
             The ceremony!
-        </div>
+        </span>
 
         <img class="icon-img" :src=iconQuinta>
-        <div class="rectangle-handdrawn" v-on:click="scrollTo('july11')">
+        <span class="rectangle-handdrawn" v-on:click="scrollTo('july11')">
             <img class="step-img step-circle" :src=circleImg>
-            <h2>11 July</h2>
-            Brunch at the Quinta, then back to Porto
-        </div>
+            <h3>11 July</h3>
+            Brunch at the Quinta,<br>
+            then back to Porto
+        </span>
 
         <img class="icon-img" :src=iconPorto>
-        <div class="rectangle-handdrawn" v-on:click="scrollTo('july12')">
+        <span class="rectangle-handdrawn" v-on:click="scrollTo('july12')">
             <img class="step-img step-circle" :src=circleImg>
-            <h2>12 July</h2>
+            <h3>12 July</h3>
             Resting day in Porto
-        </div>
+        </span>
     </div>
 
 </template>
@@ -81,18 +82,27 @@ export default {
     gap: 1rem;
     align-items: center;
     position: relative;
-    padding: 1rem;
+    width: calc(100% - 2rem);
+    padding-bottom: 2rem;
 }
 .rectangle-handdrawn {
-    --rectangle-color: #333333d1;
+    --rectangle-color: #1772b872;
     color: var(--rectangle-color);
     border: 3px solid var(--rectangle-color);
     box-sizing: border-box;
     border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
     text-align: center;
-    padding: 4px 8px;
+    padding: 12px 8px;
     mix-blend-mode: multiply;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+.main-rectangle {
+    font-weight: 700;
+    box-shadow: 0px 0px 6px #ffcf00a8;
 }
 .step-img {
     display: block;
@@ -113,17 +123,31 @@ export default {
     --size-timeline-icon: 80px;
     width: var(--size-timeline-icon);
     mix-blend-mode: multiply;
+    opacity: 50%;
 }
 h1 {
-    font-weight: bold;
+    font-family: 'Quicksand';
+    font-weight: 700;
     font-size: x-large;
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
 }
 .header-img {
     mix-blend-mode: multiply;
     width: var(--size-timeline-star);
+    opacity: 50%;
+}
+h3 {
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+}
+span {
+    font-family: 'Quicksand';
+    font-weight: 400;
 }
 </style>

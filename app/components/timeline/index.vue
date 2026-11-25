@@ -46,17 +46,24 @@
 </template>
 
 <script>
+import circleImg from '../../assets/Handdrawn_Circle_Filled.png'
+import starImg from '../../assets/Handdrawn_Star.png'
+import iconPorto from '../../assets/Icon_Porto.png'
+import iconBus from '../../assets/Icon_Bus.png'
+import iconRings from '../../assets/Icon_Rings.png'
+import iconQuinta from '../../assets/Icon_Quinta.png'
+
 export default {
     data() {
         return {
-            circleImg: "_nuxt/assets/Handdrawn_Circle_Filled.png",
+            circleImg,
             circleSize: 30,
-            starImg: "_nuxt/assets/Handdrawn_Star.png",
+            starImg,
             starSize: 50,
-            iconPorto: "_nuxt/assets/Icon_Porto.png",
-            iconBus: "_nuxt/assets/Icon_Bus.png",
-            iconRings: "_nuxt/assets/Icon_Rings.png",
-            iconQuinta: "_nuxt/assets/Icon_Quinta.png",
+            iconPorto,
+            iconBus,
+            iconRings,
+            iconQuinta,
         }
     },
     methods: {

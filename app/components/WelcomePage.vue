@@ -2,17 +2,17 @@
     <div class="welcome-container">
         <div class="photo-container">
             <photo-frame
-                imgSrc="_nuxt/assets/Couple1.JPG"
+                :imgSrc=couple1
                 :sizePx=imageSizePx
                 :rotation=-imageRotation
             />
             <photo-frame
-                imgSrc="_nuxt/assets/Couple2.JPG"
+                :imgSrc=couple2
                 :sizePx=imageSizePx
                 :rotation=imageRotation
             />
             <photo-frame
-                imgSrc="_nuxt/assets/Couple3.jpeg"
+                :imgSrc=couple3
                 :sizePx=imageSizePx
                 :rotation=-imageRotation
             />
@@ -22,17 +22,17 @@
 
         <div class="photo-container">
             <photo-frame
-                imgSrc="_nuxt/assets/Couple4.png"
+                :imgSrc=couple4
                 :sizePx=imageSizePx
                 :rotation=imageRotation
             />
             <photo-frame
-                imgSrc="_nuxt/assets/Couple5.png"
+                :imgSrc=couple5
                 :sizePx=imageSizePx
                 :rotation=-imageRotation
             />
             <photo-frame
-                imgSrc="_nuxt/assets/Couple6.png"
+                :imgSrc=couple6
                 :sizePx=imageSizePx
                 :rotation=imageRotation
             />
@@ -43,6 +43,12 @@
 
 <script>
 import PhotoFrame from './PhotoFrame.vue';
+import couple1 from '../assets/Couple1.JPG'
+import couple2 from '../assets/Couple2.JPG'
+import couple3 from '../assets/Couple3.jpeg'
+import couple4 from '../assets/Couple4.png'
+import couple5 from '../assets/Couple5.png'
+import couple6 from '../assets/Couple6.png'
 
 export default {
     components: {
@@ -51,7 +57,13 @@ export default {
     data() {
         return {
             imageSizePx: 85,
-            imageRotation: 5
+            imageRotation: 5,
+            couple1,
+            couple2,
+            couple3,
+            couple4,
+            couple5,
+            couple6,
         }
     }
 }

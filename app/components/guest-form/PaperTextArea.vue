@@ -95,27 +95,4 @@ textarea {
   position: absolute;
   pointer-events: none;
 }
-
-.tape {
-  position: absolute;
-  width: 50px;
-  height: 20px;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-}
-
-.tape-top-left {
-  top: 0px;
-  left: -20px;
-  transform: rotate(-45deg);
-}
-
-.tape-top-right {
-  top: -5px;
-  right: -20px;
-  transform: rotate(45deg);
-}
 </style>

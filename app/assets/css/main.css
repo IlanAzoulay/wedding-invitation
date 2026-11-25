@@ -1,13 +1,123 @@
-@import "tailwindcss";
+html, body {
+  margin: 0;
+  padding: 0;
+}
 
 button {
     cursor: pointer;
 }
 
 :root {
+  /* --title-color: #585B3C;
+  --main-color: #5B523C; */
+  --title-color: #206aa3;
+  --main-color: #5B523C;
+
+
+  --script-font: 'Italianno';
+  --title-font: 'Gagalin';
+  --main-font: 'Quicksand';
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
   --notebook-blue: rgba(0, 97, 146, 0.25);
   --notebook-red: rgba(155, 0, 0, 0.25);
 
   --size-timeline-star: 35px;
   --size-timeline-circle: 20px;
+
+  color: var(--main-color)
+}
+
+h1, h2, h3 {
+  color: var(--title-color);
+}
+span, text {
+  color: var(--main-color)
+}
+h1, h2, h3, span, text {
+  mix-blend-mode: multiply;
+}
+
+@font-face {
+  font-family: 'Italianno';
+  src: url('../fonts/italianno.regular.ttf');
+}
+@font-face {
+  font-family: 'Gagalin';
+  src: url('../fonts/Gagalin-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('../fonts/Quicksand_Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Quicksand';
+  src: url('../fonts/Quicksand_Light_Oblique.otf') format('opentype');
+  font-weight: 300;
+  font-style: oblique;
+}
+@font-face {
+  font-family: 'Quicksand';
+  src: url('../fonts/Quicksand_Book.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Quicksand';
+  src: url('../fonts/Quicksand_Book_Oblique.otf') format('opentype');
+  font-weight: 400;
+  font-style: oblique;
+}
+@font-face {
+  font-family: 'Quicksand';
+  src: url('../fonts/Quicksand_Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Quicksand';
+  src: url('../fonts/Quicksand_Bold_Oblique.otf') format('opentype');
+  font-weight: 700;
+  font-style: oblique;
+}
+
+.tape {
+  position: absolute;
+  width: 50px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.tape-top-left {
+  top: 0;
+  left: 0;
+  transform: rotate(-45deg) translateX(-25%) translateY(-75%);
+}
+
+.tape-top-right {
+  top: 0;
+  right: 0;
+  transform: rotate(45deg) translateX(25%) translateY(-75%);
+}
+
+.tape-bottom-left {
+  bottom: 0;
+  left: 0;
+  transform: rotate(45deg) translateX(-25%) translateY(75%);
+}
+
+.tape-bottom-right {
+  bottom: 0;
+  right: 0;
+  transform: rotate(-45deg) translateX(25%) translateY(75%);
 }

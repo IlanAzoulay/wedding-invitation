@@ -1,6 +1,6 @@
 <template>
 
-    <h1>
+    <h1 style="opacity: 90%;">
         <img class="header-img" src="../../assets/Icon_Calendar.png">
         SUMMARY
     </h1>

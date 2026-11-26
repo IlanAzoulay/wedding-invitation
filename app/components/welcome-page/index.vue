@@ -18,7 +18,10 @@
             />
         </div>
 
-        <h1>April & Ilan</h1>
+        <div class="text-container">
+            <h1>April & Ilan</h1>
+            <h2>Insert more text about you're invited blablabla</h2>
+        </div>
 
         <div class="photo-container">
             <photo-frame
@@ -38,21 +41,25 @@
             />
         </div>
 
+        <scroll-arrows/>
+
     </div>
 </template>
 
 <script>
-import PhotoFrame from './PhotoFrame.vue';
-import couple1 from '../assets/Couple1.JPG'
-import couple2 from '../assets/Couple2.JPG'
-import couple3 from '../assets/Couple3.jpeg'
-import couple4 from '../assets/Couple4.png'
-import couple5 from '../assets/Couple5.png'
-import couple6 from '../assets/Couple6.png'
+import PhotoFrame from '../PhotoFrame.vue';
+import ScrollArrows from './ScrollArrows.vue';
+import couple1 from '../../assets/Couple1.JPG'
+import couple2 from '../../assets/Couple2.JPG'
+import couple3 from '../../assets/Couple3.jpeg'
+import couple4 from '../../assets/Couple4.png'
+import couple5 from '../../assets/Couple5.png'
+import couple6 from '../../assets/Couple6.png'
 
 export default {
     components: {
-        PhotoFrame
+        PhotoFrame,
+        ScrollArrows
     },
     data() {
         return {
@@ -75,8 +82,12 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 2rem;
     padding-top: 1rem;
+}
+.text-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
 }
 .photo-container {
     display: flex;

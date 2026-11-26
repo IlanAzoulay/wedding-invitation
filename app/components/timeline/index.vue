@@ -1,6 +1,5 @@
 <template>
-
-    <h1 style="opacity: 90%;">
+    <h1 style="opacity: 90%;" id="timeline">
         <img class="header-img" src="../../assets/Icon_Calendar.png">
         SUMMARY
     </h1>

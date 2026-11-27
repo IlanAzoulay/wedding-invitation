@@ -31,7 +31,7 @@ button {
   --notebook-line-height: 27px;
 
   color: var(--main-color);
-  color-scheme: light;
+  color-scheme: light only;
 }
 
 h1, h2, h3 {

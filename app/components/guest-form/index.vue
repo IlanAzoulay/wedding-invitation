@@ -24,7 +24,6 @@
                     <label class="form-question" for="guestname">Name</label>
                     <textarea
                         id="guestname"
-                        placeholder="Teddy Riner"
                         v-model="answers.answerName.response"></textarea>
                 </div>
 
@@ -298,6 +297,6 @@ textarea:focus {
     text-shadow: 0 0 0.6px currentColor
 }
 textarea::placeholder {
-    color: gray;
+    color: rgba(0, 0, 0, 0.2);
 }
 </style>

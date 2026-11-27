@@ -1,12 +1,14 @@
 <template>
-    <div class="radio-list">
+    <div class="radio-container">
         <form-label
             :label-text="labelText"
             :has-error="hasError"
         />
-        <div v-for="option in radioOptions" class="radio-choice">
-            <input type="radio" :id="option" :value="option" v-model="picked" />
-            <label :for="option">{{option}}</label>
+        <div class="choices-list">
+            <div v-for="option in radioOptions" class="radio-choice">
+                <input type="radio" :id="option" :value="option" v-model="picked" />
+                <label :for="option">{{option}}</label>
+            </div>
         </div>
     </div>
 </template>
@@ -35,17 +37,32 @@ export default {
 </script>
 
 <style scoped>
-input {
-    cursor: inherit;
+.radio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-label {
-    cursor: inherit;
-    padding-left: 3px;
-}
-.radio-list {
+.choices-list {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    align-items: center;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label {
+    cursor: pointer;
+    padding: 2px 10px;
+    border-radius: 3px;
+    transition: background-color 0.15s;
+}
+
+input[type="radio"]:checked + label {
+    background-color: rgba(0, 0, 0, 0.1);
+    font-weight: 600;
 }
 .radio-choice {
     cursor: pointer;

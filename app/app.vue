@@ -10,7 +10,9 @@
       <img class="transition-flowers" src="./assets/Flower_pattern_2.png">
 
       <guest-form/>
-      <img class="transition-flowers" src="./assets/Flower_pattern_2.png">
+      <img class="transition-flowers" src="./assets/Flower_pattern_2.png" style="margin-top: 50rem;">
+
+      TODO: bons plans
     </div>
 </template>
 

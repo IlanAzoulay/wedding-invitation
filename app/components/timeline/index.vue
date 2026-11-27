@@ -81,7 +81,7 @@ export default {
     gap: 1rem;
     align-items: center;
     position: relative;
-    width: calc(100% - 2rem);
+    width: calc(100% - 4rem);  /* because margin is not working */
     padding-bottom: 2rem;
 }
 .rectangle-handdrawn {
@@ -119,7 +119,7 @@ export default {
     width: var(--size-timeline-star);
 }
 .icon-img {
-    --size-timeline-icon: 80px;
+    --size-timeline-icon: 70px;
     width: var(--size-timeline-icon);
     mix-blend-mode: multiply;
     opacity: 50%;
@@ -144,6 +144,7 @@ h3 {
     margin: 0;
     padding: 0;
     font-weight: 700;
+    font-size: medium;
 }
 span {
     font-family: 'Quicksand';

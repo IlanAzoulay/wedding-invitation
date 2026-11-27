@@ -61,16 +61,18 @@ export default {
     flex-direction: row;
     justify-content: center;
     gap: 1rem;
+    mix-blend-mode: multiply;
 }
 h3 {
     font-family: "Quicksand";
     font-weight: 400;
-    font-size: x-small;
+    font-size: medium;
     text-align: center;
-    padding-bottom: 5px;
+    padding-bottom: 12px;
+    mix-blend-mode: multiply;
 }
 img {
-    height: 20px;
+    height: 40px;
     animation: bounce 1s infinite;
 }
 @keyframes bounce {

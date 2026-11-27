@@ -28,7 +28,10 @@ button {
   --size-timeline-star: 35px;
   --size-timeline-circle: 20px;
 
-  color: var(--main-color)
+  --notebook-line-height: 27px;
+
+  color: var(--main-color);
+  color-scheme: light;
 }
 
 h1, h2, h3 {

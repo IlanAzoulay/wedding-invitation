@@ -24,7 +24,6 @@
                 TODO: First Name <br>
                 TODO: Last Name <br>
                 TODO: Plus ones <br>
-                <br>
 
                 <radio-choices
                     labelText="I will be joining on..."
@@ -106,20 +105,20 @@ class Answer {
 
 class FormAnswers {
     constructor() {
-        this.answerFirstName = new Answer()
-        this.answerLastName = new Answer()
-        this.answerPlusOnes = new Answer()
+        this.answerFirstName = new Answer();
+        this.answerLastName = new Answer();
+        this.answerPlusOnes = new Answer();
 
-        this.answerArrivalDate = new Answer()
-        this.answerTransportIn = new Answer()
-        this.answerTransportOut = new Answer()
+        this.answerArrivalDate = new Answer();
+        this.answerTransportIn = new Answer();
+        this.answerTransportOut = new Answer();
 
-        this.answerPortoBefore = new Answer()
-        this.answerDinner = new Answer()
-        this.answerBrunch = new Answer()
-        this.answerPortoAfter = new Answer()
+        this.answerPortoBefore = new Answer();
+        this.answerDinner = new Answer();
+        this.answerBrunch = new Answer();
+        this.answerPortoAfter = new Answer();
 
-        this.additionalNotes = new Answer(false)
+        this.additionalNotes = new Answer(false);
     }
 }
 
@@ -243,7 +242,7 @@ export default {
 .torn-paper-content {
     position: relative;
     z-index: 2;
-    padding: 0px 10px 10px 20px;
+    padding: 1px 10px 10px 20px;
     mix-blend-mode: multiply;
     display: flex;
     flex-direction: column;

@@ -1,13 +1,22 @@
 <template>
     <div class="radio-container">
-        <form-label
-            :label-text="labelText"
-            :has-error="hasError"
-        />
+
+        <h3>
+            <form-label
+                :label-text="labelText"
+                :has-error="hasError"
+            />
+        </h3>
+
+        <!-- Inspi
+        https://www.getpapercss.com/docs/components/forms/
+        https://wiredjs.com/
+        -->
+
         <div class="choices-list">
             <div v-for="option in radioOptions" class="radio-choice">
-                <input type="radio" :id="option" :value="option" v-model="picked" />
-                <label :for="option">{{option}}</label>
+                <input type="radio" :id="`${uid}-${option}`" :value="option" v-model="picked" />
+                <label :for="`${uid}-${option}`">{{option}}</label>
             </div>
         </div>
     </div>
@@ -21,7 +30,8 @@ export default {
     },
     data() {
       return {
-        picked: ''
+        picked: '',
+        uid: Math.random().toString(36).slice(2)
       }
     },
     props: {
@@ -47,6 +57,7 @@ export default {
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 1rem;
 }
 
 input[type="radio"] {
@@ -56,15 +67,29 @@ input[type="radio"] {
 label {
     cursor: pointer;
     padding: 2px 10px;
-    border-radius: 3px;
-    transition: background-color 0.15s;
+    opacity: 80%;
+    position: relative;
 }
 
 input[type="radio"]:checked + label {
-    background-color: rgba(0, 0, 0, 0.1);
-    font-weight: 600;
+    text-shadow: 0 0 0.6px currentColor;
+    opacity: 100%;
+}
+
+input[type="radio"]:checked + label::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 10px;
+    right: 10px;
+    height: 2px;
+    background-color: rgba(255, 0, 0, 0.25);
 }
 .radio-choice {
     cursor: pointer;
+}
+h3 {
+    font-weight: 400;
+    font-size: large;
 }
 </style>

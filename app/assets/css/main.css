@@ -46,6 +46,12 @@ h1, h2, h3, span, text {
   padding: 0;
   text-align: center;
 }
+.form-question {
+  color: var(--title-color);
+  font-family: "Quicksand";
+  font-weight: 400;
+  font-size: large;
+}
 
 @font-face {
   font-family: 'Italianno';

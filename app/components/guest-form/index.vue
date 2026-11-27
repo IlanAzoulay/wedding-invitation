@@ -20,9 +20,14 @@
             <!-- Everything happens here -->
             <div class="torn-paper-content">
                 <h1>INVITATION</h1>
+                <div class="name-field">
+                    <label class="form-question" for="guestname">Name</label>
+                    <textarea
+                        id="guestname"
+                        placeholder="Teddy Riner"
+                        v-model="answers.answerName.response"></textarea>
+                </div>
 
-                TODO: First Name <br>
-                TODO: Last Name <br>
                 TODO: Plus ones <br>
 
                 <radio-choices
@@ -89,7 +94,6 @@
 <script>
 import emailjs from '@emailjs/browser'
 import HandDrawnButton from './HandDrawnButton.vue';
-import PaperTextArea from './PaperTextArea.vue';
 import RadioChoices from './RadioChoices.vue';
 
 class Answer {
@@ -105,8 +109,7 @@ class Answer {
 
 class FormAnswers {
     constructor() {
-        this.answerFirstName = new Answer();
-        this.answerLastName = new Answer();
+        this.answerName = new Answer();
         this.answerPlusOnes = new Answer();
 
         this.answerArrivalDate = new Answer();
@@ -125,7 +128,6 @@ class FormAnswers {
 export default {
     components: {
         HandDrawnButton,
-        PaperTextArea,
         RadioChoices,
     },
     setup() {
@@ -265,6 +267,37 @@ h1 {
     font-weight: 700;
     font-size: x-large;
     padding-top: calc(var(--notebook-line-height) + 1px);
-    padding-bottom: 32px;
+    padding-bottom: 3px;
+}
+
+textarea {
+    color: var(--main-color);;
+    border: 2px solid darkgray;
+    box-sizing: border-box;
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+    text-align: center;
+    mix-blend-mode: multiply;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    resize: none;
+    height: calc(var(--notebook-line-height) + 1px);
+    padding-top: 4px;
+    font-size: large;
+    background-color: rgba(0, 0, 0, 0.035);
+}
+textarea:focus {
+    outline: none;
+    border-color: var(--title-color);
+}
+.name-field {
+    width: 100%;
+}
+.name-field:focus-within label {
+    text-shadow: 0 0 0.6px currentColor
+}
+textarea::placeholder {
+    color: gray;
 }
 </style>
